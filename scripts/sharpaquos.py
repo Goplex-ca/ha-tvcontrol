@@ -1,8 +1,12 @@
 #!/usr/bin/env python
+# Author: Martin MAsson
+# Created: 2025-11-15
+# Description: This connects to a Sharp Aquos TV and sends it a command
+'''Usage:
 
-''' This connects to a Sharp Aquos TV and send it a command
-
-./sharpaquos.py -H tv_hostname -c command {-u username} {-p password} {-P port} {-v} 
+    /sharpaquos.py -H tv_hostname -c command 
+                        {-u username} {-p password} 
+                        {-P port} {-n} {-v} 
 
     -H : hostname of the remote TV to connect to.
     -c : Command to send 
@@ -22,11 +26,8 @@
     -v : verbose - prints more info
 
 Example:
-
     This will power off the TV
-
         ./sharpaquos.py -H mytv.mydomain.com -u USER -p PWD -c poweroff
-
 '''
 
 from __future__ import absolute_import
