@@ -2,6 +2,7 @@
 # Author: Martin MAsson
 # Created: 2025-11-15
 # Description: This connects to a Sharp Aquos TV and sends it a command
+
 '''Usage:
 
     /sharpaquos.py -H tv_hostname -c command 
