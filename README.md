@@ -9,11 +9,12 @@ Sharp Aquos TVs
  Based on: https://assets.sharpnecdisplays.us/documents/usermanuals/4p-bej2u_4w-bft5u_emanual.pdf
 
 Samsung TVs
- - TBD
+ - scripts/samsung.py
 
+ Based on this info: https://groups.io/g/crestron/topic/samsung_ip_control/78332353
+ 
 URayTech Multicast Decoder
  - script/uraytech_*
-
 
 Usage:
 
@@ -21,10 +22,11 @@ configuration.yaml
 ```
 shell_command:
   tv_sharpaquos: python scripts/sharpaquos.py -H "{{ host }}" -c "{{ command }}"
+  tv_samsung: python scripts/samsung.py -H "{{ host }}" -c "{{ command }}"
   tv_mcast_decoder_channel: scripts/uray_channel_id.sh "{{ host }}" "{{ channel }}"
 ```
 
-Lovelace button
+Lovelace button example
 ```
       - show_name: true
         show_icon: true
