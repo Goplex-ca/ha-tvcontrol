@@ -4,25 +4,28 @@
 These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.
 
 ### Sharp Aquos TVs
- - scripts/sharpaquos.py
+Based on the manual: 
+ https://assets.sharpnecdisplays.us/documents/usermanuals/4p-bej2u_4w-bft5u_emanual.pdf
 
- Requires pexpect python module
- Based on: https://assets.sharpnecdisplays.us/documents/usermanuals/4p-bej2u_4w-bft5u_emanual.pdf
+- `scripts/sharpaquos.py`
+-  Requires `pexpect` python module
+
 
 ### Samsung TVs
- - scripts/samsung.py
+Based on this info:
+ https://groups.io/g/crestron/topic/samsung_ip_control/78332353
 
-Requires pexpect python module
- Based on this info: https://groups.io/g/crestron/topic/samsung_ip_control/78332353
+- `scripts/samsung.py`
+- Requires `pexpect` python module
+
  
 ### URayTech Multicast Decoder
- - script/uraytech.py
-
-Requires requests python module
+- `script/uraytech.py`
+- Requires `requests` python module
 
 ## Usage:
 
-`configuration.yaml`
+Define the shell commands in `configuration.yaml`:
 ```
 shell_command:
   tv_sharpaquos: python scripts/sharpaquos.py -H "{{ host }}" -c "{{ command }}"
