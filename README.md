@@ -1,7 +1,7 @@
 # ha-tvcontrol
 ## Home Assistant TV control scripts
 
-These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.
+These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.  It can obviousely be used standalone or by any other tools that can trigger scripts.
 
 ### Sharp Aquos TVs
 Based on the manual: 
@@ -23,7 +23,7 @@ Based on this info:
 - `script/uraytech.py`
 - Requires `requests` python module
 
-## Usage:
+## Usage in Home Assistant:
 
 Define the shell commands in `configuration.yaml`:
 ```
