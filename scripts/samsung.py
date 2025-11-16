@@ -104,7 +104,7 @@ def main():
             commandtext = 'VOLUME ' + value + ' (' + ' '.join(hex(ord(c)) for c in command) + ')'
         if options['-c'] == 'mute':
             commandtext = 'Mute'
-            command = '\xAA\x13\xFE\x01\x01\x11'
+            command = '\xAA\x13\xFE\x01\x01\x01'
         if options['-c'] == 'unmute':
             commandtext = 'Unmute'
             command = '\xAA\x13\xFE\x01\x00\x12'
