@@ -121,10 +121,10 @@ def main():
         port = '1515'
     if verbose: print ("Port:", port)
 
-    # netcat = "nc " + hostname + " " + port
-    # child = pexpect.spawnu(netcat)
+    netcat = "nc " + hostname + " " + port
+    child = pexpect.spawnu(netcat)
     
-    # child.sendline(command)
+    child.sendline(command)
 
 if __name__ == '__main__':
     main()
