@@ -37,21 +37,21 @@ shell_command:
 
 Lovelace button example:
 ```
-      - show_name: true
-        show_icon: true
-        type: button
-        name:
-          - type: text
-            text: TV
-          - type: text
-            text: HDMI2
-        icon_height: 25px
-        tap_action:
-          action: call-service
-          service: shell_command.tv_sharpaquos
-          service_data:
-            host: x.x.x.x
-            command: hdmi2
-        icon: mdi:television-box
-        entity: binary_sensor.x_x_x_x
+- show_name: true
+show_icon: true
+type: button
+name:
+    - type: text
+    text: TV
+    - type: text
+    text: HDMI2
+icon_height: 25px
+tap_action:
+    action: call-service
+    service: shell_command.tv_sharpaquos
+    service_data:
+    host: x.x.x.x
+    command: hdmi2
+icon: mdi:television-box
+entity: binary_sensor.x_x_x_x
 ```
