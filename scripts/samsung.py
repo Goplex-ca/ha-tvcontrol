@@ -46,6 +46,17 @@ def exit_with_usage():
     print(globals()['__doc__'])
     os._exit(1)
 
+def decimal_to_hex(n):
+    if n == 0:
+        return "0"
+    hex_digits = "0123456789abcdef"
+    hex_val = ""
+    while n > 0:
+        remainder = n % 16
+        hex_val = hex_digits[remainder] + hex_val
+        n = n // 16
+    return hex_val
+
 def main():
 
     # Parse the options, arguments, etc.
@@ -86,21 +97,18 @@ def main():
         if options['-c'] == 'hdmi3':
             commandtext = 'HDMI3'
             command = '\xAA\x14\xFE\x01\x31\x44'
-        if options['-c'].startswith('vol'):
+        if options['-c'].startswith('vol:'):
             value = options['-c'].split(':',1)[1]
-            commandtext = 'VOLUME' + value
-            # if int(value) == 100:
-            #     command = 'VOLM ' + value
-            # if int(value) < 100:
-            #     command = 'VOLM  ' + value
-            # if int(value) < 10:
-            #     command = 'VOLM   ' + value
+            if verbose: print ("Value:", value)
+            command = '\xAA\x12\x01\x01' + chr(int(value, 16)) + chr(int(str(int(value)+14), 16)) # Damn Samsung and Python!
+            commandtext = 'VOLUME ' + value + ' (' + ' '.join(hex(ord(c)) for c in command) + ')'
         if options['-c'] == 'mute':
             commandtext = 'Mute'
             command = '\xAA\x13\xFE\x01\x01\x11'
         if options['-c'] == 'unmute':
             commandtext = 'Unmute'
             command = '\xAA\x13\xFE\x01\x00\x12'
+        if verbose: print ("Command Text:", commandtext)
         if verbose: print ("Command:", command)
     else:
         # if host was not specified then quit
@@ -113,10 +121,10 @@ def main():
         port = '1515'
     if verbose: print ("Port:", port)
 
-    netcat = "nc " + hostname + " " + port
-    child = pexpect.spawnu(netcat)
+    # netcat = "nc " + hostname + " " + port
+    # child = pexpect.spawnu(netcat)
     
-    child.sendline(command)
+    # child.sendline(command)
 
 if __name__ == '__main__':
     main()
