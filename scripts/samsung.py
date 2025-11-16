@@ -21,7 +21,7 @@
             vol:0    : \\xAA\\x12\\x01\\x01\\x00\\x14 - Volume to 0 (MIN)
             vol:32   : \\xAA\\x12\\x01\\x01\\x32\\x46 - Volume to 32 (50%)
             vol:64   : \\xAA\\x12\\x01\\x01\\x64\\x78 - Volume to 64 (MAX)
-            mute     : \\xAA\\x13\\xFE\\x01\\x01\\x1 - Mute sound
+            mute     : \\xAA\\x13\\xFE\\x01\\x01\\x01 - Mute sound
             unmute   : \\xAA\\x13\\xFE\\x01\\x00\\x12 - Unmute sound  
             etc.
     -P : Remote port to connect to (defaults to 1515)
