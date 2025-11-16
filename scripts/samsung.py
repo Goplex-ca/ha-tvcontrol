@@ -13,16 +13,16 @@
 
     -H : hostname of the remote TV to connect to.
     -c : Command to send 
-            poweroff : \xAA\x11\xFE\x01\x00\x10 - Power Off
-            poweron  : \xAA\x11\xFE\x01\x01\x11 - Power On
-            hdmi1    : \xAA\x14\xFE\x01\x21\x34 - Input HDMI1
-            hdmi2    : \xAA\x14\xFE\x01\x23\x36 - Input HDMI2
-            hdmi3    : \xAA\x14\xFE\x01\x31\x44 - Input HDMI3
-            vol:0    : \xAA\x12\x01\x01\x00\x14 - Volume to 0 (MIN)
-            vol:32   : \xAA\x12\x01\x01\x32\x46 - Volume to 32 (50%)
-            vol:64   : \xAA\x12\x01\x01\x64\x78 - Volume to 64 (MAX)
-            mute     : \xAA\x13\xFE\x01\x01\x1 - Mute sound
-            unmute   : \xAA\x13\xFE\x01\x00\x12 - Unmute sound  
+            poweroff : \\xAA\\x11\\xFE\\x01\\x00\\x10 - Power Off
+            poweron  : \\xAA\\x11\\xFE\\x01\\x01\\x11 - Power On
+            hdmi1    : \\xAA\\x14\\xFE\\x01\\x21\\x34 - Input HDMI1
+            hdmi2    : \\xAA\\x14\\xFE\\x01\\x23\\x36 - Input HDMI2
+            hdmi3    : \\xAA\\x14\\xFE\\x01\\x31\\x44 - Input HDMI3
+            vol:0    : \\xAA\\x12\\x01\\x01\\x00\\x14 - Volume to 0 (MIN)
+            vol:32   : \\xAA\\x12\\x01\\x01\\x32\\x46 - Volume to 32 (50%)
+            vol:64   : \\xAA\\x12\\x01\\x01\\x64\\x78 - Volume to 64 (MAX)
+            mute     : \\xAA\\x13\\xFE\\x01\\x01\\x1 - Mute sound
+            unmute   : \\xAA\\x13\\xFE\\x01\\x00\\x12 - Unmute sound  
             etc.
     -P : Remote port to connect to (defaults to 1515)
     -v : verbose - prints more info
@@ -97,7 +97,7 @@ def main():
             #     command = 'VOLM   ' + value
         if options['-c'] == 'mute':
             commandtext = 'Mute'
-            command = '\xAA\x13\xFE\x01\x01\x1'
+            command = '\xAA\x13\xFE\x01\x01\x11'
         if options['-c'] == 'unmute':
             commandtext = 'Unmute'
             command = '\xAA\x13\xFE\x01\x00\x12'
