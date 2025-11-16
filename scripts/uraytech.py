@@ -86,7 +86,7 @@ def main():
             path = '/set.cgi?'
         if verbose: print ("Command:", command)
     else:
-        # if host was not specified then quit
+        # if command was not specified then quit
         print('Help:')
         exit_with_usage()
     if '-u' in options:

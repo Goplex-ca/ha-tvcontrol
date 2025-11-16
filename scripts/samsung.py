@@ -111,7 +111,7 @@ def main():
         if verbose: print ("Command Text:", commandtext)
         if verbose: print ("Command:", command)
     else:
-        # if host was not specified then quit
+        # if command was not specified then quit
         print('Help:')
         exit_with_usage()
 
