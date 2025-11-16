@@ -1,7 +1,7 @@
 # ha-tvcontrol
 ## Home Assistant TV control scripts
 
-These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.  It can obviousely be used standalone or by any other tools that can trigger scripts.
+These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.  It can obviously be used standalone or by any other tools that can trigger scripts.
 
 ### Sharp Aquos TVs
 Based on the manual: 
