@@ -15,8 +15,8 @@
     -c : Command to send 
             channelup   :   Channel Up
             channeldown :   Channel Down
-            channel:XXX :   Go to channel ID XXX
-            reboot:         Reboot the decoder
+            channel:XXX :   Go to channel ID XXX (eg. channel:2)
+            reboot      :   Reboot the decoder
             etc.
     -u : username to user for login.  Defaults to "admin"
     -p : password to user for login.  Defaults to "admin"
@@ -79,7 +79,7 @@ def main():
         if options['-c'].startswith('channel:'):
             value = options['-c'].split(':',1)[1]
             commandtext = 'Channel ' + value
-            command = 'playindex=' + value
+            command = 'playindex=' + str(int(value)-1)
         if options['-c'] == 'reboot':
             commandtext = 'Reboot'
             command = 'reboot'
