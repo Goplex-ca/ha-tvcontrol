@@ -48,8 +48,8 @@ Lovelace button example:
           action: call-service
           service: shell_command.tv_sharpaquos
           service_data:
-            host: 10.56.0.187
+            host: x.x.x.x
             command: hdmi2
         icon: mdi:television-box
-        entity: binary_sensor.10_56_0_214
+        entity: binary_sensor.x_x_x_x
 ```
