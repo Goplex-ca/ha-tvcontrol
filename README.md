@@ -1,32 +1,36 @@
 # ha-tvcontrol
-Home Assistant TV control scripts
+## Home Assistant TV control scripts
 
 These are a collection of home made scripts to control various TV in a restaurant through Home Assistant.
 
-Sharp Aquos TVs
+### Sharp Aquos TVs
  - scripts/sharpaquos.py
 
+ Requires pexpect python module
  Based on: https://assets.sharpnecdisplays.us/documents/usermanuals/4p-bej2u_4w-bft5u_emanual.pdf
 
-Samsung TVs
+### Samsung TVs
  - scripts/samsung.py
 
+Requires pexpect python module
  Based on this info: https://groups.io/g/crestron/topic/samsung_ip_control/78332353
  
-URayTech Multicast Decoder
- - script/uraytech_*
+### URayTech Multicast Decoder
+ - script/uraytech.py
 
-Usage:
+Requires requests python module
 
-configuration.yaml
+## Usage:
+
+`configuration.yaml`
 ```
 shell_command:
   tv_sharpaquos: python scripts/sharpaquos.py -H "{{ host }}" -c "{{ command }}"
   tv_samsung: python scripts/samsung.py -H "{{ host }}" -c "{{ command }}"
-  tv_mcast_decoder_channel: scripts/uray_channel_id.sh "{{ host }}" "{{ channel }}"
+  tv_uraytech: python scripts/uraytech.py -H "{{ host }}" -c "{{ command }}"
 ```
 
-Lovelace button example
+Lovelace button example:
 ```
       - show_name: true
         show_icon: true
